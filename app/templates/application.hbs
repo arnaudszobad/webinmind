@@ -1,0 +1,40 @@
+<div class="menu-wrapper">
+  <button type="button" {{bindAttr class="isOpen:ouvert:ferme :btn"}} {{action 'toggleOpenstate'}}>&nbsp;</button>
+  <div {{bindAttr class="controller.isOpen:ouvert:ferme :slide-menu"}}>
+    <button type="button" class="close" aria-hidden="true" {{action 'toggleOpenstate'}}>&times;</button>
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-1">
+        <div class="rain one-pixel">
+          <div class="first-pixel one"></div>
+          <div class="first-pixel two"></div>
+          <div class="first-pixel three"></div>
+          <div class="first-pixel four"></div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-lg-offset-1">
+        <ul class="nav nav-stacked" role="navigation">
+          <li role="presentation" class="divider"></li>
+          {{#linkTo 'index' tagName="li"}}
+            {{#linkTo 'index' class="text-right"}}<span>Accueil</span>{{/linkTo}}
+          {{/linkTo}}
+          <li role="presentation" class="divider"></li>
+          {{#linkTo 'galerie' tagName="li"}}
+            {{#linkTo 'galerie' class="text-right"}}<span>Galerie</span>{{/linkTo}}
+          {{/linkTo}}
+          <li role="presentation" class="divider"></li>
+          {{#linkTo 'experiments' tagName="li"}}
+            {{#linkTo 'experiments' class="text-right"}}<span>Labo</span>{{/linkTo}}
+          {{/linkTo}}
+          <li role="presentation" class="divider"></li>
+          {{#linkTo 'links' tagName="li"}}
+            {{#linkTo 'links' class="text-right"}}<span>Liens</span>{{/linkTo}}
+          {{/linkTo}}
+          <li role="presentation" class="divider"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div {{bindAttr class="controller.isOpen:ouvert:ferme :container"}}>
+	{{outlet}}
+</div>

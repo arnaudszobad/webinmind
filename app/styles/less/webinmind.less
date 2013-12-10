@@ -1,0 +1,324 @@
+@import "lib/bootstrap/bootstrap";
+@import "lib/fa/font-awesome";
+@import "lib/jquery.parallax.less";
+@import "webinmind_functions";
+@import "webinmind_variables";
+
+/******* Le Labo *******/
+@import "labo/labo0";
+@import "labo/labo1";
+@import "labo/labo2";
+@import "labo/labo3";
+@import "labo/labo4";
+
+/**************** GOOGLE FONTS ****************/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+
+/**************** FONT-FACE ****************/
+@font-face {
+    font-family: 'bauhaus-thin_leftyregular';
+    src: url('/assets/fonts/bauhaus_thin_lefty-webfont.eot');
+    src: url('/assets/fonts/bauhaus_thin_lefty-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/bauhaus_thin_lefty-webfont.woff') format('woff'),
+         url('/assets/fonts/bauhaus_thin_lefty-webfont.ttf') format('truetype'),
+         url('/assets/fonts/bauhaus_thin_lefty-webfont.svg#bauhaus-thin_leftyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bauhaus_lt_btlight';
+    src: url('/assets/fonts/bauhaus_light_bt-webfont.eot');
+    src: url('/assets/fonts/bauhaus_light_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/bauhaus_light_bt-webfont.woff') format('woff'),
+         url('/assets/fonts/bauhaus_light_bt-webfont.ttf') format('truetype'),
+         url('/assets/fonts/bauhaus_light_bt-webfont.svg#bauhaus_lt_btlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bauhaus_md_btmedium';
+    src: url('/assets/fonts/bauhaus_medium_bt-webfont.eot');
+    src: url('/assets/fonts/bauhaus_medium_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/bauhaus_medium_bt-webfont.woff') format('woff'),
+         url('/assets/fonts/bauhaus_medium_bt-webfont.ttf') format('truetype'),
+         url('/assets/fonts/bauhaus_medium_bt-webfont.svg#bauhaus_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**************** GENERAL ****************/
+h1,
+h2,
+h3{
+  font-weight:900;
+  &,
+  h4,
+  h5,
+  h6{
+    color:@titleColor;
+  }
+}
+
+.clearmargins{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.text-indent-out{
+  text-indent:-9999px ;
+}
+.noheight{
+  height:0 !important;
+}
+.vertical{
+  .rotation();
+}
+
+.page-name{
+  //background:url("../img/system/bkg-menu.jpg") left top repeat #6f35d4;
+  // height:120px;
+  // overflow:hidden;
+  // margin: 0px 0px 30px;
+  // .text-shadow(0px,0px,20px);
+  
+  h1{
+    font-family:'bauhaus_lt_btlight';
+    font-size: 6vmax;
+    color:#AE97DF;
+    //margin-top:0px;
+    //.text-shadow(0px,0px,20px,#555);
+  }
+}
+
+.jumbotron{
+  background:@backgroundMenu;
+  // .box-shadow-jumbotron(@boxshadow-jumbotron);
+  
+  h1{
+    color:#6f35d4;
+  }
+}
+
+/**************** BODY ****************/
+body{
+  color:#ffffff;
+  background:url("../img/system/bkg.jpg") left top repeat #6f35d4;
+  font-family: 'bauhaus_lt_btlight';
+  font-weight:300;
+  // padding-bottom: 30px;
+  font-size: @bodyFontSize;
+  .transitionMid;
+}
+
+.logo-baseline{
+  position:relative;
+  margin:auto;
+  width: 40%;
+  margin-top: 18%;
+}
+
+/**************** HEADER ****************/
+.page-header {
+  border-color:@oneLineColor;
+}
+
+
+/**************** MENU ****************/
+.menu-toggle{ // toggle menu button
+  width: 20px;
+  height: 20px;
+  &.ferme{ // closed state
+    background-color: red;
+  }
+  &.ouvert{ // opened state
+    background-color: green;
+  }
+}
+
+.menu-wrapper{
+  .btn{
+    background: url('../img/system/button-slide-menu.png') center no-repeat #6F35D4;
+    background-size: 50%;
+    padding: 12px 24px;
+    margin:20px 0 0 20px;
+    position:fixed;
+    top: 0%;
+    left: 0px;
+    .box-shadow-inside;
+    .transitionMid;
+
+    &:hover{
+      .box-shadow-inside(1px,1px,1px,#000);
+      background-size: 51%;
+    }
+    &.ouvert{
+      left: -75px;
+    }
+
+  }
+
+  .slide-menu{ // slide menu container
+    width: 200px;
+    height: 100%;
+    position:fixed;
+    top:00%;
+    background-color:#006;
+    opacity:0.5;
+    .transitionFast;
+
+    &.ferme{ // closed state
+      left: -200px;  
+    }
+    &.ouvert{ // opened state
+      left: 00px;  
+      .box-shadow(10px, 0px, 20px, #000);
+
+      & .close{ // close button
+        margin-right: 5px;
+        font-size:30px;
+        color:#fff !important;
+      }
+    }
+
+    .one-pixel{
+      background: none transparent!important;
+      border:0 !important;
+      .box-shadow(none);
+
+    }
+
+    & ul{ // navigation
+      margin-top: 25px;
+
+      li{ // navigation item
+        margin: 0px;
+        &.divider{
+          height: 1px;
+          margin: 0;
+          overflow: hidden;
+          background-color: #e5e5e5;
+        }
+        & a{
+          font-family: 'bauhaus_lt_btlight';
+          font-size:1.3em;
+          color:#fff;
+          &:hover{
+            background: none transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  .transitionFast;
+  &.ouvert{ // opened state
+    .translation(200px,0px);
+  }
+}
+
+/******* HOME *******/
+.home-content{
+  margin-top: 50px;
+}
+
+
+/******* SOCIAL LINKS *******/
+// .social-links{
+//   position:fixed;
+//   top:40%;
+//   left :0px;
+//   width:30px;
+//   height:50px;
+//   background:@backgroundMenu;
+//   cursor:pointer;
+//   color:#ffffff;
+//   font-weight:300;  
+  
+//   .rounded-corners(0px,15px,15px,0px);
+//   .box-shadow(0px,0px,10px);
+//   .transitionMid();
+  
+//   &:hover{
+//     left :0px;
+//     height:300px;
+//     .box-shadow(0px,0px,10px);
+//   }
+// }
+
+/**************** GALLERY ****************/
+/**
+ * @Todo : essayer de le refaire plus optimisé
+ *
+ */
+
+.thumbnails{
+  overflow: hidden !important;
+  
+  .thumbnail-item{
+    margin-bottom:  15px;
+    overflow: hidden !important;
+    position:relative;
+    
+    .caption {
+      position: absolute;
+      overflow: hidden !important;
+      top: 10%;
+      left: 10%;
+      width:80%;
+      height:80%;
+      font-size:36px;
+      color:#fff;
+      text-align:center;
+      line-height:100px;
+      
+      .rounded-corners();
+      .transitionFast();
+
+      background-color: rgba(93, 47, 195,0.6);
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      -webkit-transform: translate(460px, -100px) rotate(180deg);
+      -moz-transform: translate(460px, -100px) rotate(180deg);
+      -o-transform: translate(460px, -100px) rotate(180deg);
+      -ms-transform: translate(460px, -100px) rotate(180deg);
+      transform: translate(460px, -100px) rotate(180deg);
+    }
+      
+    &:hover .caption{
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+      overflow: hidden !important;
+      -webkit-transition-delay: 0s;
+      -moz-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+      transition-delay: 0s;
+      -webkit-transform: translate(0px, 0px);
+      -moz-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+    }  
+    
+    .view{
+      overflow: hidden !important;
+      cursor:pointer;
+      
+      .thumbnail{
+        overflow: hidden !important;
+        background-color: #5E30C4;
+        
+        &:hover{
+          border-color:#AE96DE;
+        }
+      }
+    }
+  }
+}

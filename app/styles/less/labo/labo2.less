@@ -1,0 +1,69 @@
+@import "../webinmind_functions";
+@import "../webinmind_variables";
+
+/***** Labo 2 *****/
+/* Variables */
+@extCircleDims:      200px;
+@extCircleMetaDims:  190px;
+@counterDims:        170px;
+@intCircleDims:      120px;
+
+/* Let's Go */
+.circle-external{
+  width:@extCircleDims;
+  height:@extCircleDims;
+  .rectangle-to-circle();
+  background-color:transparent;
+  border:20px solid #183888;
+  display: table-cell;
+  text-align: center;
+
+  &::before{
+    content: " ";
+    width:@extCircleMetaDims;
+    height:@extCircleMetaDims;
+    .rectangle-to-circle();
+    background-color:red;
+    position: absolute;
+    left: 22px;
+    top:  115px;
+    z-index: -2;
+  }
+
+  .counter{
+    width:@counterDims;
+    height:@counterDims;
+    position: absolute;
+    top: 125px;
+    left: 33px;
+    z-index: -1;
+    display: table-cell;
+    vertical-align: middle;
+    clip: rect(0px,170px,170px,85px);
+    .rectangle-to-circle();
+
+    &::before{
+      content: " ";
+      width:@counterDims;
+      height:@counterDims;
+      .rectangle-to-circle();
+      background-color: #fff;
+      position: absolute;
+      left: 0px;
+      top:  00px;
+      /* C'est ici que se passe la rotation du compteur */
+      clip: rect(0px,85px,85px,0px);
+      .rotation(90deg);
+    }
+  }
+  .circle-internal{
+    width:@intCircleDims;
+    height:@intCircleDims;
+    .rectangle-to-circle();
+    background-color:#183888;
+    z-index: 10;
+    position:absolute;
+    left: 57px;
+    top: 150px;
+  }
+}

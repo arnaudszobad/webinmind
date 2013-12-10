@@ -1,0 +1,128 @@
+@import "../webinmind_functions";
+@import "../webinmind_variables";
+
+/***** Labo 3 *****/
+
+/* ** One pixel **
+ * Animation d'un pixel
+ * Mouvement du haut vers le bas avec opacity fade
+ */
+
+/* Variables */
+@firstPixelDims:  20px;
+@areaDims:        300px;
+@animations:      rain-scroll,rain-background;
+
+/* Keyframes */
+@-webkit-keyframes rain-scroll{
+  0%{
+    top:0px;
+    opacity:0;
+  }
+  50%{
+    top:75px;
+    opacity: 1;
+  }
+  75%{
+    top:114px;
+    opacity: 0.75;
+  }
+  99%{
+    top:150px;
+    opacity:0;
+  }
+  100%{
+    top:150px;
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes rain-background{
+  0%{
+    background-color: transparent;
+  }
+  1%{
+    background-color: #ff0000;
+  }
+  99%{
+    background-color: #ff0000;
+  }
+  100%{
+    background-color: transparent;
+  }
+}
+
+.lets-rain(@duration:1s,@easing:linear,@iteration:3,@delay:0s,@rest...){
+  -webkit-animation-duration:@duration;
+     -moz-animation-duration:@duration;
+          animation-duration:@duration;
+
+  -webkit-animation-delay: @delay;
+     -moz-animation-delay: @delay;
+          animation-delay: @delay;
+
+  -webkit-animation-iteration-count:(@iteration*10);
+     -moz-animation-iteration-count:(@iteration*10);
+          animation-iteration-count:(@iteration*10);
+
+  -webkit-animation-timing-function:@easing;
+     -moz-animation-timing-function:@easing;
+          animation-timing-function:@easing;
+
+  -webkit-animation-name:@rest;
+     -moz-animation-name:@rest;
+          animation-name:@rest;
+
+
+}
+
+/* Let's Go */
+.one-pixel{
+  height: @areaDims;
+  border:1px solid #5B2DC1;
+  /* Hor.L - Vert.L - Blur - Spread - Color */
+  .box-shadow-jumbotron(@boxshadow-jumbotron);
+
+
+  .one{
+    left: 10%;
+    /* @duration(1s) - @easing(linear) - @iteration(3*10) - @delay(0s) -  @animation */
+    .lets-rain(2s,linear,30,0s,@animations);
+  }
+  .two{
+    left:35%;
+    .lets-rain(6s,linear,30,0.3s,@animations);
+  }
+  .three{
+    left: 60%;
+    .lets-rain(3s,linear,30,0.6s,@animations);
+  }
+  .four{
+    left:80%;
+    .lets-rain(1s,linear,30,0.9s,@animations);
+  }
+
+  .first-pixel{
+    position: relative;
+    width: (@firstPixelDims/2);
+    height: (@firstPixelDims/2);
+
+    &::before,
+    &::after{
+      position:absolute;
+      content: " ";
+      width: inherit;
+      height: inherit;
+    }
+    &::before{
+      left: -15px;
+      top: -20px;
+      .lets-rain(5s,linear,8,1s,@animations);
+    }
+    &::after{
+      left: 30px;
+      top: 15px;
+      .lets-rain(4s,linear,10,2s,@animations);
+    }
+  }
+}

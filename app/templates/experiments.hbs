@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-lg-2">
+    <h1 class="page-header">Le Labo</h1>
+    <p>Cette partie contient mes essais en css3 et js ... Tout et n''importe quoi</p>
+  </div>
+  <div class="col-lg-10 page-header">
+    <div class="row labos">
+      <!-- Labo 0 -->
+      <div class="col-lg-offset-1 col-lg-11">
+        <h1>Expérience 0<br /><small>Slidy Breadcrumb Component</small></h1>
+        <div class="col-lg-6">
+          {{#each item in model}}
+            {{log item.level}}
+            <span {{action "getLink" item.root}}><i class="fa fa-arrow-circle-right"></i>{{#link-to "experiments"}}{{item.root.label}}{{/link-to}}</span>
+            <br />
+            {{#each link in item.links}}
+              <span {{action "getLink" link}}><i class="fa fa-arrow-right"></i>{{#link-to "experiments"}}{{link.label}}{{/link-to}}<i class="fa fa-arrow-left"></i></span>
+            {{/each}}
+            <br /><br />
+          {{/each}}
+        </div>
+        <div class="exp0 row">
+          <div class="col-lg-6">
+            <div class="slidy-breadcrumb">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h4><small>Breadcrumb</small></h4>
+                </div>
+                <div class="panel-body">
+                  <div class="panel-body-inner row">
+                    {{#each link in controller.path}}
+                    {{link}}
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Labo 1 -->
+      <div class="col-lg-5 col-lg-offset-1">
+        <h1>Expérience 1<br /><small>Nav fan like - 100% css</small></h1>
+        <div class="col-lg-offset-2 col-lg-12">
+          <div class="navbar-labo-1 text-center">
+            <ul class="unstyled nav">
+              <li><a href="#" class="text-indent-out"><span>Accueil</span></a></li>
+              <li><a href="#" class="text-indent-out"><span>Galerie</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Labo 2 -->
+      <div class="col-lg-5 col-lg-offset-1">
+        <h1>Expérience 2<br /><small>Round counter - 100% css</small></h1>
+        <div class="circle-external">
+          <div class="counter"></div>
+          <div class="circle-internal"></div>
+        </div>
+      </div>
+
+      <!-- Labo 3 -->
+      <div class="col-lg-5 col-lg-offset-1">
+        <h1>Expérience 3<br /><small>Pixel rain - 100% css</small></h1>
+        <div class="one-pixel img-rounded">
+          <div class="first-pixel one"></div>
+          <div class="first-pixel two"></div>
+          <div class="first-pixel three"></div>
+          <div class="first-pixel four"></div>
+        </div>
+      </div>
+
+      <!-- Labo 4 -->
+      <div class="col-lg-5 col-lg-offset-1">
+        <h1>Expérience 4<br /><small>Parallax - Js(rechargez la page)</small></h1>
+        <div class="one-pixel parallax-viewport">
+          <div class="parallax-layer parallax-layer-1">
+            <img src="/assets/img/system/logo-baseline.png" />
+          </div>
+          <div class="parallax-layer parallax-layer-2">
+            <img src="/assets/img/system/logo-baseline.png" />
+          </div>
+          <div class="parallax-layer parallax-layer-3">
+            <img src="/assets/img/system/logo-baseline.png" />
+          </div>
+          <div class="parallax-layer parallax-layer-4">
+            <img src="/assets/img/system/logo-baseline.png" />
+          </div>
+          <div class="parallax-layer parallax-layer-5">
+            <img src="/assets/img/system/logo-baseline.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

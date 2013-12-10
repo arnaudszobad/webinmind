@@ -1,0 +1,99 @@
+@import "../webinmind_functions";
+@import "../webinmind_variables";
+
+/***** Labo 1 *****/
+.navbar-labo-1{
+  
+  .nav{
+    background:@backgroundMenu;
+    margin: @resetMargin;
+    height:@navbarHeight;
+    margin-top:150px;
+    
+    li{
+      display:inline-block;
+      height:(@navbarHeight - 10);
+      width:(@navbarWidth - 10);
+      margin-top:(@navbarHeight / 8);
+      background:@backgroundMenu;
+      
+      a{
+        padding:0px;
+        height:(@navbarHeight - 10);
+      }
+      
+      &:first-child{
+        a{ // accueil
+          background:@iconeHome;
+          &::before{
+            .set-content('0% JS');
+          }
+        }
+      }
+      
+      &:last-child{
+        a{ // blog
+        background:@iconeGalery;
+          &::before{
+            .set-content('100% L3SS');
+          }
+        }
+      }
+      
+      &.active a{
+        background-position:0px -30px;
+        .box-shadow-inset-omega();
+      }
+      
+      a{
+        .box-shadow-inset-alpha();
+        .transitionSlow();
+        
+        &:hover{
+          background-position:0px -30px;
+          .box-shadow-inset-omega();
+        }
+        
+        &::before{
+          z-index:-2;
+          background:url("../img/system/bkg-menu.jpg") left top no-repeat #6f35d4;
+          background-size:0%;
+          position: absolute;
+          overflow: hidden !important;
+          top: 0%;
+          left: 0%;
+          width:200px;
+          height:30px;
+          border:1px solid #000;
+          text-indent:0px;
+          .box-shadow(5px,5px,2px,#000);
+          font-family:'bauhaus_md_btmedium';
+          opacity:0;
+          //@TODO mettre 2vmin ou 2vmax 
+          // dans les mediaqueries
+          font-size:2vmin;
+          
+          -webkit-transform: rotate(0deg) translate(0px, 0px) ;
+          -moz-transform: translate(0px, 0px) rotate(00deg);
+          -o-transform: translate(0px, 0px) rotate(00deg);
+          -ms-transform: translate(0px, 0px) rotate(00deg);
+          transform: rotate(00deg);
+          
+          .transitionSlow();
+        }
+       
+        &:hover::before{
+          background-size:100%;
+          color:#000;
+          opacity:1;
+          position:absolute;
+          -webkit-transform: rotate(-90deg) translate(123px, -85px) ;
+          -moz-transform: translate(30px, 30px) rotate(-90deg);
+          -o-transform: translate(30px, 30px) rotate(-90deg);
+          -ms-transform: translate(30px, 30px) rotate(-90deg);
+          transform: translate(30px, 30px) rotate(-90deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.rounded-corners (@topleft: 5px,@topright: 5px,@bottomright: 5px,@bottomleft: 5px) {
+    -webkit-border-radius: @arguments;
+       -moz-border-radius: @arguments;
+        -ms-border-radius: @arguments;
+         -o-border-radius: @arguments;
+            border-radius: @arguments;
+}
+.rounded-corners-all(@radius:20px){
+  -webkit-border-radius: @arguments;
+       -moz-border-radius: @arguments;
+        -ms-border-radius: @arguments;
+         -o-border-radius: @arguments;
+            border-radius: @arguments;
+}
+
+.rectangle-to-circle(@radius:100%){
+  -webkit-border-radius: @arguments;
+     -moz-border-radius: @arguments;
+      -ms-border-radius: @arguments;
+       -o-border-radius: @arguments;
+          border-radius: @arguments;
+}
+
+.border(@size:2px,@type:solid,@color:#111){
+    border:@arguments;
+}
+
+.transitionFast (@prop: all, @time: 0.2s, @ease: ease-in-out) {
+  -webkit-transition: @arguments;
+    -moz-transition: @arguments;
+     -ms-transition: @arguments;
+      -o-transition: @arguments;
+         transition: @arguments;
+}
+.transitionMid (@prop: all, @time: 0.5s, @ease: ease-in-out) {
+  -webkit-transition: @arguments;
+     -moz-transition: @arguments;
+      -ms-transition: @arguments;
+       -o-transition: @arguments;
+          transition: @arguments;
+}
+.transitionSlow (@prop: all, @time: 1s, @ease: ease-in-out) {
+  -webkit-transition: @arguments;
+     -moz-transition: @arguments;
+      -ms-transition: @arguments;
+       -o-transition: @arguments;
+          transition: @arguments;
+}
+
+
+.invisible(){
+  display:none;
+}
+
+.box-shadow(@x:10px,@y:10px,@blur:10px,@color:#000000){
+  -webkit-box-shadow:@arguments;
+     -moz-box-shadow:@arguments;
+          box-shadow:@arguments;
+}
+.box-shadow-inside(@x:3px,@y:3px,@blur:5px,@color:#000){
+  -webkit-box-shadow:inset @x @y @blur @color,inset -@x -@y @blur @color;
+     -moz-box-shadow:inset @x @y @blur @color,inset -@x -@y @blur @color;
+          box-shadow:inset @x @y @blur @color,inset -@x -@y @blur @color;
+}
+
+
+.box-shadow-inset-alpha(){
+  -webkit-box-shadow:
+    inset 0px 0 0px 0px #333,
+    inset 0px 0 0px 0px #333;
+  -moz-box-shadow:
+    inset 0px 0 0px 0px #333,
+    inset 0px 0 0px 0px #333;
+  box-shadow:
+    inset 0px 0 0px 0px #333,
+    inset 0px 0 0px 0px #333;
+}
+.box-shadow-inset-omega(@radius:5px){
+  -webkit-box-shadow:
+    inset @radius 0 @radius -@radius #333,
+    inset -@radius 0 @radius -@radius #333;
+  -moz-box-shadow:
+    inset @radius 0 @radius -@radius #333,
+    inset -@radius 0 @radius -@radius #333;
+  box-shadow:
+    inset @radius 0 @radius -@radius #333,
+    inset -@radius 0 @radius -@radius #333;
+}
+
+.box-shadow-inset-jumbotron(@dist:1px,@blur:5px,@color:#555){
+  -webkit-box-shadow:
+    inset @dist @dist @blur @color,
+    inset -@dist -@dist @blur @color;
+  -moz-box-shadow:
+    inset @dist @dist @blur @color,
+    inset -@dist -@dist @blur @color;
+  box-shadow:
+    inset @dist @dist @blur @color,
+    inset -@dist -@dist @blur @color;
+}
+
+.box-shadow-jumbotron(...){
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+
+.box-shadow(...){
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+
+.text-shadow(@x:10px,@y:10px,@blur:10px,@color:#000000){
+  -webkit-text-shadow:@arguments;
+     -moz-text-shadow:@arguments;
+          text-shadow:@arguments;
+}
+
+.rotation(@angle:-90deg){
+  -webkit-transform:rotate(@angle);
+     -moz-transform:rotate(@angle);
+          transform:rotate(@angle);
+}
+.translation(@x:0px,@y:0px){
+  -webkit-transform:translate(@x,@y);
+     -moz-transform:translate(@x,@y);
+          transform:translate(@x,@y);
+}
+.scale2D(@coef:1){
+  -webkit-transform:scale(@coef);
+     -moz-transform:scale(@coef);
+          transform:scale(@coef);
+}
+
+.set-content(@name:'Accueil'){
+  content:@name;
+}
