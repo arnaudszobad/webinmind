@@ -3,7 +3,8 @@ var LinkModel = DS.Model.extend({
   label:  DS.attr('string'),
   isActive:DS.attr('boolean'),
   breadcrumb:DS.belongsTo('breadcrumb'),
-  level:    DS.attr('number')
+  level:    DS.attr('number'),
+  parent:   DS.belongsTo('link')
 });
 
 LinkModel.FIXTURES = [
@@ -23,7 +24,8 @@ LinkModel.FIXTURES = [
     label:'AA',
     isActive:false,
     breadcrumb:2,
-    level:1
+    level:1,
+    parent:1
   },
   {
     id:7,
@@ -31,7 +33,8 @@ LinkModel.FIXTURES = [
     label:'AB',
     isActive:false,
     breadcrumb:1,
-    level:1
+    level:1,
+    parent:1
   },
   // Children AA
   {
@@ -40,7 +43,8 @@ LinkModel.FIXTURES = [
     label:'AAA',
     isActive:false,
     breadcrumb:2,
-    level:2
+    level:2,
+    parent:6
   },
   {
     id:9,
@@ -48,7 +52,8 @@ LinkModel.FIXTURES = [
     label:'AAB',
     isActive:false,
     breadcrumb:2,
-    level:2
+    level:2,
+    parent:6
   }
   //,
   // Parent B

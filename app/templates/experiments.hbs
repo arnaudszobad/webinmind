@@ -10,13 +10,12 @@
         <h1>Expérience 0<br /><small>Slidy Breadcrumb Component</small></h1>
         <div class="col-lg-6">
           {{#each item in model}}
-            {{log item.level}}
-            <span {{action "getLink" item.root}}><i class="fa fa-arrow-circle-right"></i>{{#link-to "experiments"}}{{item.root.label}}{{/link-to}}</span>
-            <br />
-            {{#each link in item.links}}
-              <span {{action "getLink" link}}><i class="fa fa-arrow-right"></i>{{#link-to "experiments"}}{{link.label}}{{/link-to}}<i class="fa fa-arrow-left"></i></span>
-            {{/each}}
-            <br /><br />
+            <span {{action "getPathTo" item}}>
+              {{#link-to "experiments"}}
+                <i class="fa fa-arrow-circle-right"></i>
+                {{item.label}}
+              {{/link-to}}
+            </span>
           {{/each}}
         </div>
         <div class="exp0 row">
@@ -28,9 +27,7 @@
                 </div>
                 <div class="panel-body">
                   <div class="panel-body-inner row">
-                    {{#each link in controller.path}}
-                    {{link}}
-                    {{/each}}
+                    <h1>{{truc}}</h1>
                   </div>
                 </div>
               </div>
