@@ -6,7 +6,14 @@ Router.map(function() {
   // put your routes here
   this.route('index',{path:"/"});
   this.route('galerie');
+  // this.resource('experiments',function(){
+  //   this.route('a');
+  //   this.route('aa');
+  //   this.route('aaa');
+  //   });
+  // });
   this.route('experiments');
+
   this.route('links');
   this.route('blog');
 });

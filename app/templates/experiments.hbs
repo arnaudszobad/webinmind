@@ -9,14 +9,19 @@
       <div class="col-lg-offset-1 col-lg-11">
         <h1>Expérience 0<br /><small>Slidy Breadcrumb Component</small></h1>
         <div class="col-lg-6">
-          {{#each item in model}}
-            <span {{action "getLinkTo" item}}>
+          <div>
+            {{#each item in model}}
               {{#link-to item.route}}
-                <i class="fa fa-arrow-circle-right"></i>
-                {{item.label}}
+                <span {{action "getLinkTo" item}}>
+                  <i class="fa fa-arrow-circle-right"></i>
+                  {{item.label}}
+                </span>
               {{/link-to}}
-            </span>
-          {{/each}}
+            {{/each}}
+          </div>
+          <div>
+            {{outlet}}
+          </div>
         </div>
         <div class="exp0 row">
           <div class="col-lg-6">
@@ -27,7 +32,7 @@
                 </div>
                 <div class="panel-body">
                   <div class="panel-body-inner row">
-                    <h1>{{chemin}}</h1>
+                    {{controller.chemin}}
                   </div>
                 </div>
               </div>

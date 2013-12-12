@@ -1,10 +1,8 @@
 var ExperimentsController = Ember.Controller.extend({
-  isSelectd:null,
-  actions:{
-    getLink:function(link){
-
-    }
-  }  
+  path:Ember.A(),
+  chemin:function(){
+    return this.get('path').reverse();//.reverse().join('>');
+  }.property('path.@each')
 });
 
 export default ExperimentsController;
