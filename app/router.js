@@ -14,7 +14,7 @@ Router.map(function() {
   // });
   this.route('experiments');
 
-  this.route('links');
+  // this.route('links');
   this.route('blog');
 });
 

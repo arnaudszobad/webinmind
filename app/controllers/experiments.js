@@ -1,7 +1,8 @@
 var ExperimentsController = Ember.Controller.extend({
   path:Ember.A(),
   chemin:function(){
-    return this.get('path').reverse();//.reverse().join('>');
+    console.log('chemin',this.get('path'));
+    return this.get('path');//.join('>');
   }.property('path.@each')
 });
 

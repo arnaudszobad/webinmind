@@ -32,7 +32,11 @@
                 </div>
                 <div class="panel-body">
                   <div class="panel-body-inner row">
-                    {{controller.chemin}}
+                    {{!#each link in controller.path }}
+                      {{!link.label}} -
+                    {{!/each}}
+                    
+                    {{each links itemViewClass="link"}}
                   </div>
                 </div>
               </div>
@@ -40,7 +44,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- Labo 1 -->
       <div class="col-lg-5 col-lg-offset-1">
