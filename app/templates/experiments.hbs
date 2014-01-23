@@ -32,11 +32,9 @@
                 </div>
                 <div class="panel-body">
                   <div class="panel-body-inner row">
-                    {{!#each link in controller.path }}
-                      {{!link.label}} -
-                    {{!/each}}
-                    
-                    {{each links itemViewClass="link"}}
+                    {{#each link in controller.path }}
+                      {{link.label}} -
+                    {{/each}}
                   </div>
                 </div>
               </div>
